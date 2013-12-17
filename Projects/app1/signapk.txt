@@ -1,0 +1,5 @@
+keytool -genkey -v -keystore k1.keystore -alias Easy_BubbleO2 -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -keystore k1.keystore -digestalg SHA1 -sigalg MD5withRSA Easy_BubbleO2-release-unsigned.apk Easy_BubbleO2
+
+jarsigner -verify EasyBubbleO2-release-unsigned.apk

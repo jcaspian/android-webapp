@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.jcaspian.easy_bubbleo2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Easy BubbleO2</name>
+    <description>
+        Easy BubbleO2
+    </description>
+    <author email="jeff@jcaspian.tk" href="http://jcaspian.tk">
+        jCaspian
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+	
+	<preference name="Fullscreen" value="true" />
+	<preference name="WebViewBounce" value="false" />
+	<preference name="Orientation" value="landscape" />
+	<!-- default, landscape or portrait -->
+	
+	<preference name="DisallowOverscroll" value="true"/>
+	<preference name="BackgroundColor" value="0xff000000"/>
+	<preference name="KeepRunning" value="true"/>
+	<preference name="LoadUrlTimeoutValue" value="20000"/>
+	<preference name="SplashScreen" value="splash"/>
+	<preference name="SplashScreenDelay" value="50000"/>
+	<preference name="AutoHideSplashScreen" value="false" />
+</widget>
