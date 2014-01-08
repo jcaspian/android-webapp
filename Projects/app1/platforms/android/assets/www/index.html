@@ -79,6 +79,7 @@
 				</div><!-- Main Page -->
 				<div class="item">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-left btn-sm btn-prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
 						<span class="navbar-brand">Coming Soon</span>
 						<button type="button" data-target="#carousel-page" data-slide-to="2" class="btn btn-primary pull-right btn-sm">Next</button>
 					</div>
@@ -120,6 +121,7 @@
 				</div><!-- Product Page -->
 				<div class="item">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <button type="button" data-target="#carousel-page" data-slide-to="1" class="btn btn-primary pull-left btn-sm btn-prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
 						<span class="navbar-brand">Prizes</span>
 						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm">Next</button>
 					</div>
@@ -346,9 +348,10 @@
 							<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
 						</div>
 						<div class="modal-body">
-							You have won a bottle of Drinking Water!
+							You have won a Consolation Prize!
 							<br/>
-							<img src="images/draw-result-0.jpg" style="width: 100%;"alt="Prize" />
+							<!--<img src="images/draw-result-0.jpg" style="width: 100%;"alt="Prize" />-->
+              <img src="images/free-gift.gif" style="width: 100%;"alt="Prize" />
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default btn-congratulations-continue" data-dismiss="modal">Continue</button>
@@ -477,18 +480,29 @@
 					$('.form-signin').find('input[name=username]').val('');
 					$('.form-signin').find('input[name=password]').val('');
 					$('.draw-items').removeClass('draw-items-active').removeClass('fade50');
+          $('.draw-items-demo').removeClass('draw-items-active-demo').removeClass('fade50');
 					$('.btn-roll-draw').removeClass('hide');
 					$('.btn-roll-draw-demo').removeClass('hide');
 					$('.tnc-hidden').addClass('hide');
 					$('.btn-tnc-hidden').removeClass('hide');
-					$('.carousel-inner').parent().carousel(0);
+					//$('.carousel-inner').parent().carousel(0);
+          location.reload();
 				}
+        var _this = $(this);
 				if (scroll.scrollTop()) {
 					scroll.stop().animate({scrollTop:0}, 250, function() { 
-						$(target).parent().carousel('next');
+            if (_this.hasClass('btn-prev')) {
+              $(target).parent().carousel('prev');
+            } else {
+              $(target).parent().carousel('next');
+            }
 					});
 				} else {
-					$(target).parent().carousel('next');
+					if (_this.hasClass('btn-prev')) {
+              $(target).parent().carousel('prev');
+            } else {
+              $(target).parent().carousel('next');
+            }
 				}
 				e.preventDefault();
 				return false;
@@ -525,7 +539,7 @@
 							
 							$('.draw-items-demo').not($('.draw-items-demo:nth-child('+ r +')')).removeClass('draw-items-active-demo');
 							$('.draw-items-demo:nth-child('+ r +')').addClass('draw-items-active-demo');
-								playMusic("audio/BubbleGood.ogg");
+              playMusic("audio/BubbleGood.ogg");
 							i++;
 						}
 					}, 250);
