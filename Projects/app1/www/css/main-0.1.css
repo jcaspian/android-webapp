@@ -18,7 +18,7 @@ html, body {
 	overflow: auto;
 	overflow-x: hidden;
   position: relative;
-  width: 480px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
 }
@@ -365,6 +365,6 @@ body:before {
 	width: 100%;
 }
 .item-lucky-draw, .item-lucky-draw-demo {
-	background: #fff url(../images/draw-background.jpg) no-repeat center center;
-	background-size: cover;
+	background: #fff url(../images/Picture4.jpg) no-repeat center center;
+	background-size: contain;
 }

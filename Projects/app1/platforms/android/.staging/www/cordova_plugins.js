@@ -430,6 +430,13 @@ module.exports = [
         "clobbers": [
             "CDV.WebIntent"
         ]
+    },
+    {
+        "file": "plugins/com.phonegap.plugins.videoplayer/www/videoplayer.js",
+        "id": "com.phonegap.plugins.videoplayer.VideoPlayer",
+        "clobbers": [
+            "cordova.plugins.videoPlayer"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -453,7 +460,8 @@ module.exports.metadata =
     "org.apache.cordova.file-transfer": "0.4.0",
     "org.apache.cordova.media-capture": "0.2.5",
     "org.apache.cordova.inappbrowser": "0.2.5",
-    "com.borismus.webintent": "3.0.0"
+    "com.borismus.webintent": "3.0.0",
+    "com.phonegap.plugins.videoplayer": "1.0"
 }
 // BOTTOM OF METADATA
 });

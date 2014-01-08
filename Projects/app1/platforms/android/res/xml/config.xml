@@ -66,6 +66,9 @@
     <description>
         Easy BubbleO2
     </description>
+    <feature name="VideoPlayer">
+        <param name="android-package" value="com.phonegap.plugins.videoplayer.VideoPlayer" />
+    </feature>
     <name>Easy BubbleO2</name>
     <description>
         Easy BubbleO2

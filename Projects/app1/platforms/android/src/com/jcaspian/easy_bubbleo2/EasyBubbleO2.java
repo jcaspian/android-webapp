@@ -20,6 +20,8 @@
 package com.jcaspian.easy_bubbleo2;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebSettings.ZoomDensity;
 import org.apache.cordova.*;
 
 public class EasyBubbleO2 extends CordovaActivity 
@@ -32,6 +34,11 @@ public class EasyBubbleO2 extends CordovaActivity
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
+        WebSettings settings = super.appView.getSettings();
+        settings.setSupportZoom(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setDisplayZoomControls(false);
+        //settings.setDefaultZoom(ZoomDensity.FAR);
     }
 }
 

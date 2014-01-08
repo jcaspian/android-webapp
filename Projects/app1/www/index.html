@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 		-->
 		<!-- <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi"> -->
-    <meta name="viewport" content="width=480, initial-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=0.25, maximum-scale=2.0, target-densitydpi=medium-dpi">
 		<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus tincidunt erat, sit amet consectetur arcu tristique et.">
 		<meta name="author" content="www.jCaspian.tk">
 
@@ -30,27 +30,6 @@
 		
 	</head>
 	<body>
-    
-	<div class="navbar navbar-inverse navbar-fixed-top hidden" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Contest</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div><!--/.nav-collapse -->
-		</div>
-	</div>
 
     <div class="ccontainerr">
 		
@@ -60,7 +39,7 @@
 				<div class="item active">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 						<span class="navbar-brand">Easy Bubbleo2</span>
-						<button type="button" data-target="#carousel-page" data-slide-to="1" class="btn btn-primary pull-right btn-sm">Next</button>
+						<button type="button" data-target="#carousel-page" data-slide-to="1" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
 					<div class="item-content" style="padding: 0;">
 						<img src="images/easy-bubbleo2.jpg" alt="" style="width: 100%;margin: 0 auto;" />
@@ -81,7 +60,7 @@
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-left btn-sm btn-prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
 						<span class="navbar-brand">Coming Soon</span>
-						<button type="button" data-target="#carousel-page" data-slide-to="2" class="btn btn-primary pull-right btn-sm">Next</button>
+						<button type="button" data-target="#carousel-page" data-slide-to="2" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
 					<!--
 					<img src="images/product-info.png" alt="Product Info" />
@@ -123,17 +102,18 @@
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <button type="button" data-target="#carousel-page" data-slide-to="1" class="btn btn-primary pull-left btn-sm btn-prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
 						<span class="navbar-brand">Prizes</span>
-						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm">Next</button>
+						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
-					<div class="item-content" style="padding: 0;background: black;">
-            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><a style="overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 1px 10px #000 inset,0px -1px 10px #000 inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/lucky-draw.jpg" alt="Prizes" style="border:0;width: 100%;margin: -1px 0 -18px 0;" /></a>
+					<div class="item-content" style="padding: 0;background: #fff;">
+            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><a style="width:100%;overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 1px 10px #fff inset,0px -1px 10px #fff inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/Picture3.jpg" alt="Prizes" style="border:0;width: 100%;margin: -1px 0 -4% 0;" /></a>
 					</div>
 				</div><!-- Prizes Page -->
 				<div class="item item-lucky-draw-demo">
-					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+					<div class="navbar navbar-inverse navbar-fixed-top hidden" role="navigation">
 						<span class="navbar-brand">Lucky Draw Demo</span>
 					</div>
-					<div class="item-content">
+					<div class="item-content" style="top:0;">
+            <img src="images/Picture5.png" alt="Lucky Draw Demo" style="width: 100%;" />
 						<div class="box-container-demo">
 							<img src="images/box.png" alt="" class="draw-items-demo" />
 							<img src="images/box.png" alt="" class="draw-items-demo" />
@@ -147,7 +127,7 @@
 							<img src="images/box.png" alt="" class="draw-items-demo" />
 							<img src="images/box.png" alt="" class="draw-items-demo" />
 						</div>
-						<button type="button" class="btn btn-primary btn-block btn-roll-draw-demo">Roll</button>
+						<button type="button" class="btn btn-danger btn-block btn-roll-draw-demo">Roll</button>
 					</div>
 				</div><!-- Lucky Draw Page -->
 				<div class="item">
@@ -262,7 +242,7 @@
 										<input type="checkbox" name="tnc"> I have read and agree to the Terms &amp; Conditions.
 									</label>
 								</div>
-								<button type="button" data-target="#carousel-page" data-slide-to="4" class="btn btn-primary btn-block btn-tnc" disabled="true">Next</button>
+								<button type="button" data-target="#carousel-page" data-slide-to="4" class="btn btn-primary btn-block btn-tnc" disabled="true">Continue</button>
 							</div>
 						</div>
 					</div>
@@ -280,28 +260,15 @@
 						</form>
 					</div>
 				</div><!-- Sign In Page -->
-				<!--
-				<div class="item bubble-wrap-item">
-					<iframe src="app/demo.html" id="BubbleWrapFrame" sandbox="allow-same-origin allow-scripts">ERROR: Failed to load iframe.</iframe>
-				</div>
-				<div class="item bubble-wrap-item">
-					<iframe src="app/index.html" id="DemoBubbleWrapFrame" sandbox="allow-same-origin allow-scripts">ERROR: Failed to load iframe.</iframe>
-				</div>
-				-->
-				<!-- <div class="item">
-					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-						<span class="navbar-brand">Game</span>
-					</div>
-					<button class="btn btn-primary btn-lg btn-launch-game">Launch Game</button>
-				</div> --><!-- Game Page -->
 				<div class="item item-lucky-draw">
-					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+					<div class="hidden navbar navbar-inverse navbar-fixed-top" role="navigation">
 						<span class="navbar-brand">Lucky Draw</span>
 						<!--
 						<button type="button" data-target="#carousel-page" data-slide-to="7" class="btn btn-primary pull-right btn-sm">Next</button>
 						-->
 					</div>
-					<div class="item-content">
+					<div class="item-content" style="top:0;">
+            <img src="images/Picture6.png" alt="Lucky Draw" style="width: 100%;" />
 						<div class="box-container">
 							<img src="images/box.png" alt="" class="draw-items" />
 							<img src="images/box.png" alt="" class="draw-items" />
@@ -315,27 +282,19 @@
 							<img src="images/box.png" alt="" class="draw-items" />
 							<img src="images/box.png" alt="" class="draw-items" />
 						</div>
-						<button type="button" class="btn btn-primary btn-block btn-roll-draw">Roll</button>
+						<button type="button" class="btn btn-danger btn-block btn-roll-draw">Roll</button>
 					</div>
 				</div><!-- Lucky Draw Page -->
-				<!--
 				<div class="item">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-						<span class="navbar-brand">Congratulations!</span>
-						<button type="button" data-target="#carousel-page" data-slide-to="8" class="btn btn-primary pull-right btn-sm">Next</button>
-						<img src="images/draw-result-1.png" alt="Prize" />
-					</div>
-				</div>--><!-- Draw Result Page -->
-				<div class="item">
-					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-						<span class="navbar-brand">Thank You</span>
+						
 						<button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-right btn-sm btn-restart">Restart</button>
 					</div>
 					<div class="item-content">
-						<!--
-						<img src="images/thank-you.jpg" alt="Thank You" />
-						-->
-						<h1 style="text-align: center;font-size: 55px;font-family:'open sans';font-weight: bold;text-shadow:#aaa 0 0 10px;">Thank You!</h1>
+						
+						<img src="images/Thank-you.jpg" alt="Thank You" style="width: 100%;" />
+						
+						<!-- <h1 style="text-align: center;font-size: 55px;font-family:'open sans';font-weight: bold;text-shadow:#aaa 0 0 10px;">Thank You!</h1> -->
 					</div>
 				</div><!-- Thank You Page -->
 			</div>
@@ -354,7 +313,7 @@
               <img src="images/free-gift.gif" style="width: 100%;"alt="Prize" />
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default btn-congratulations-continue" data-dismiss="modal">Continue</button>
+							<button type="button" class="btn btn-warning btn-congratulations-continue btn-no-thanks" data-dismiss="modal">Continue</button>
 						</div>
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
@@ -372,34 +331,11 @@
 							<img src="images/draw-result-1.png" style="width: 100%;"alt="Prize" />
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-default btn-congratulations-continue" data-dismiss="modal">Continue</button>
+							<button type="button" class="btn btn-warning btn-congratulations-continue" data-dismiss="modal">Continue</button>
 						</div>
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
-			
-			<!-- Indicators -->
-			<ol class="carousel-indicators hidden">
-				<!--
-				<li data-target="#carousel-page" data-slide-to="0" class="active"></li>
-				-->
-				<li data-target="#carousel-page" class="active"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-				<li data-target="#carousel-page"></li>
-			</ol>
-
-			<!-- Controls -->
-			<a class="left carousel-control hidden" href="#carousel-example-generic" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control hidden" href="#carousel-example-generic" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
 		</div>
 
     </div><!-- /.container -->
@@ -413,6 +349,8 @@
 	<script src="js/holder.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
 	<script>
+    var nothanks = true;
+    var vid = true;
 		$(function() {
 			$('button').not('.btn-sign-in').click(function (e) {
 				e.preventDefault();
@@ -469,14 +407,11 @@
 			});
 			$('#carousel-page .item .navbar .btn, #carousel-page .item .btn-tnc').click(function (e) {
 				if ($(this).hasClass('btn-restart')) {
-					//console.log('restart');
 					// reset
 					var tnc = $('#carousel-page .checkbox input[name=tnc]');
 					if (tnc.is(':checked')) {
-						//tnc.prop('checked', false);
 						tnc.click();
 					}
-					//$('#carousel-page .btn-tnc').prop('disabled', true);
 					$('.form-signin').find('input[name=username]').val('');
 					$('.form-signin').find('input[name=password]').val('');
 					$('.draw-items').removeClass('draw-items-active').removeClass('fade50');
@@ -485,7 +420,6 @@
 					$('.btn-roll-draw-demo').removeClass('hide');
 					$('.tnc-hidden').addClass('hide');
 					$('.btn-tnc-hidden').removeClass('hide');
-					//$('.carousel-inner').parent().carousel(0);
           location.reload();
 				}
         var _this = $(this);
@@ -590,9 +524,16 @@
 				return false;
 			});
 			$('.btn-congratulations-continue').click(function (e) {
-				$('.carousel-inner').parent().carousel('next');
-				$('#ModalCongratulationsDemo').modal('hide');
-				$('#ModalCongratulations').modal('hide');
+        if ($(this).hasClass('btn-no-thanks') && nothanks) {
+          location.reload();
+        } else {
+          $('.carousel-inner').parent().carousel('next');
+          $('#ModalCongratulationsDemo').modal('hide');
+          $('#ModalCongratulations').modal('hide');
+          try {
+            var shit = $('.item-lucky-draw-demo').detach();
+          } catch (ex) {}
+        }
 				e.preventDefault();
 				return false;
 			});
@@ -603,19 +544,6 @@
 				return false;
 			});
 			$('.btn-launch-game').click(function (e) {
-				/*
-				CDV.WEBINTENT.startActivity(
-					{
-						action: CDV.WEBINTENT.ACTION_VIEW,
-						//url: 'geo:0,0?q=' + address}, 
-						url: 'com.whatsapp'
-					}, 
-					function() {}, 
-					function() {
-						CDV.WEBINTENT.launchApp('com.whatsapp');
-					}
-				);
-				*/
 				CDV.WEBINTENT.startApplication(
 					{
 						action: CDV.WEBINTENT.ACTION_MAIN,
@@ -651,17 +579,21 @@
 				for (var i = 0, il = u.length; i < il; i++) {
 					if (username == u[i].username) {
 						if (password == u[i].password) {
-              CDV.WEBINTENT.startApplication(
-                {
-                  action: CDV.WEBINTENT.ACTION_MAIN,
-                  packageName: 'com.outplayentertainment.bubbleblaze'
-                },
-                function () {
-                  // success
-                  $('.carousel-inner').parent().carousel('next');
-                },
-                function () {/* fail */}
-              );
+              if (!vid) {
+                CDV.WEBINTENT.startApplication(
+                  {
+                    action: CDV.WEBINTENT.ACTION_MAIN,
+                    packageName: 'com.outplayentertainment.bubbleblaze'
+                  },
+                  function () {
+                    // success
+                    $('.carousel-inner').parent().carousel('next');
+                  },
+                  function () {/* fail */}
+                );
+              } else {
+                cordova.plugins.videoPlayer.play("file:///android_asset/www/video/vid.mp4"); 
+              }
               setTimeout(function () {
                 $('.carousel-inner').parent().carousel('next');
               }, 3000);
@@ -709,6 +641,33 @@
 			// Error
 		}
 	</script>
-	
+	<div class="hidden">
+	<script type="text/javascript">
+		<!--//--><![CDATA[//><!--
+			var images = new Array();
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image();
+					images[i].src = preload.arguments[i];
+				}
+			}
+			preload(
+				"images/box.png",
+				"images/draw-result-1.png",
+        "images/easy-bubbleo2.jpg",
+        "images/free-gift.gif",
+        "images/Picture3.jpg",
+        "images/Picture4.jpg",
+        "images/Picture5.png",
+        "images/Picture6.png",
+        "images/z2.png",
+        "images/product-info-1.webp",
+        "images/product-info-2.webp",
+        "images/product-info-3.webp",
+        "images/product-info-4.webp"
+			);
+		//--><!]]>
+	</script>
+</div>
 	</body>
 </html>
