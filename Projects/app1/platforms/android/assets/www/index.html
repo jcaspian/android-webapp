@@ -8,7 +8,8 @@
 		<!--
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
 		-->
-		<meta name="viewport" content="width=device-width, height=device-height, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi">
+		<!-- <meta name="viewport" content="width=device-width, height=device-height, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi"> -->
+    <meta name="viewport" content="width=480, initial-scale=1.0, user-scalable=1, target-densitydpi=medium-dpi">
 		<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus tincidunt erat, sit amet consectetur arcu tristique et.">
 		<meta name="author" content="www.jCaspian.tk">
 
@@ -51,7 +52,7 @@
 		</div>
 	</div>
 
-    <div class="<!--container-->">
+    <div class="ccontainerr">
 		
 		<div id="carousel-page" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false" data-wrap="false">
 			<!-- Wrapper for slides -->
@@ -122,8 +123,8 @@
 						<span class="navbar-brand">Prizes</span>
 						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm">Next</button>
 					</div>
-					<div class="item-content">
-						<img src="images/lucky-draw.jpg" alt="Prizes" style="border:0;position: absolute;width: 100%;top: -11px;left:0;right:0;" />
+					<div class="item-content" style="padding: 0;background: black;">
+            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><a style="overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 1px 10px #000 inset,0px -1px 10px #000 inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/lucky-draw.jpg" alt="Prizes" style="border:0;width: 100%;margin: -1px 0 -18px 0;" /></a>
 					</div>
 				</div><!-- Prizes Page -->
 				<div class="item item-lucky-draw-demo">
@@ -131,7 +132,7 @@
 						<span class="navbar-brand">Lucky Draw Demo</span>
 					</div>
 					<div class="item-content">
-						<div class="box-container">
+						<div class="box-container-demo">
 							<img src="images/box.png" alt="" class="draw-items-demo" />
 							<img src="images/box.png" alt="" class="draw-items-demo" />
 							<img src="images/box.png" alt="" class="draw-items-demo" />
@@ -285,12 +286,12 @@
 					<iframe src="app/index.html" id="DemoBubbleWrapFrame" sandbox="allow-same-origin allow-scripts">ERROR: Failed to load iframe.</iframe>
 				</div>
 				-->
-				<div class="item">
+				<!-- <div class="item">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 						<span class="navbar-brand">Game</span>
 					</div>
 					<button class="btn btn-primary btn-lg btn-launch-game">Launch Game</button>
-				</div><!-- Game Page -->
+				</div> --><!-- Game Page -->
 				<div class="item item-lucky-draw">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 						<span class="navbar-brand">Lucky Draw</span>
@@ -500,7 +501,7 @@
 					$('.btn-roll-draw-demo').addClass('hide');
 					
 					var r = Math.floor((Math.random()*9)+1);
-					var l = $('.box-container .draw-items-demo').length;
+					var l = $('.box-container-demo .draw-items-demo').length;
 					var i = 0;
 					var t = 0;
 					var drawDemoInt = setInterval(function () {
@@ -524,9 +525,7 @@
 							
 							$('.draw-items-demo').not($('.draw-items-demo:nth-child('+ r +')')).removeClass('draw-items-active-demo');
 							$('.draw-items-demo:nth-child('+ r +')').addClass('draw-items-active-demo');
-							setTimeout(function () {
 								playMusic("audio/BubbleGood.ogg");
-							}, 1);
 							i++;
 						}
 					}, 250);
@@ -567,10 +566,7 @@
 							
 							$('.draw-items').not($('.draw-items:nth-child('+ r +')')).removeClass('draw-items-active');
 							$('.draw-items:nth-child('+ r +')').addClass('draw-items-active');
-							setTimeout(function () {
-								//new Audio("file:///android_asset/www/audio/BubbleGood.ogg").play();
-								playMusic("audio/BubbleGood.ogg");
-							}, 1);
+							playMusic("audio/BubbleGood.ogg");
 							i++;
 						}
 					}, 250);
@@ -641,7 +637,20 @@
 				for (var i = 0, il = u.length; i < il; i++) {
 					if (username == u[i].username) {
 						if (password == u[i].password) {
-							$('.carousel-inner').parent().carousel('next');
+              CDV.WEBINTENT.startApplication(
+                {
+                  action: CDV.WEBINTENT.ACTION_MAIN,
+                  packageName: 'com.outplayentertainment.bubbleblaze'
+                },
+                function () {
+                  // success
+                  $('.carousel-inner').parent().carousel('next');
+                },
+                function () {/* fail */}
+              );
+              setTimeout(function () {
+                $('.carousel-inner').parent().carousel('next');
+              }, 3000);
 						} else if ((i+1) === il) {
 							throw 'Wrong password.';
 						}
