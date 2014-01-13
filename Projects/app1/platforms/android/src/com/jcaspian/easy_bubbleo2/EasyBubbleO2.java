@@ -36,7 +36,7 @@ public class EasyBubbleO2 extends CordovaActivity
         //super.loadUrl("file:///android_asset/www/index.html")
         WebSettings settings = super.appView.getSettings();
         settings.setSupportZoom(true);
-        settings.setBuiltInZoomControls(true);
+        settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
         //settings.setDefaultZoom(ZoomDensity.FAR);
     }

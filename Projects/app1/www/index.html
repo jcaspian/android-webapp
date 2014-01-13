@@ -41,7 +41,7 @@
 						<span class="navbar-brand">Easy Bubbleo2</span>
 						<button type="button" data-target="#carousel-page" data-slide-to="1" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
-					<div class="item-content" style="padding: 0;">
+					<div class="item-content swipe-target" style="padding: 0;">
 						<img src="images/easy-bubbleo2.jpg" alt="" style="width: 100%;margin: 0 auto;" />
 						<div style="margin: 0 20px;">
 							<p class="text-justify">
@@ -65,7 +65,7 @@
 					<!--
 					<img src="images/product-info.png" alt="Product Info" />
 					-->
-					<div class="item-content">
+					<div class="item-content swipe-target">
 						<div class="product-info-img-container">
 							<div class="product-info-img-1 product-info-imgs">
 								<div>
@@ -104,15 +104,16 @@
 						<span class="navbar-brand">Prizes</span>
 						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
-					<div class="item-content" style="padding: 0;background: #fff;">
-            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><a style="width:100%;overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 1px 10px #fff inset,0px -1px 10px #fff inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/Picture3.jpg" alt="Prizes" style="border:0;width: 100%;margin: -1px 0 -4% 0;" /></a>
+					<div class="item-content swipe-target" style="padding: 0;background: #fff;">
+            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><span style="width:100%;overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 0px 0px 0px #fff inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/fuck-eric.jpg" alt="Prizes" style="border:0;width: 100%;" /></span>
 					</div>
 				</div><!-- Prizes Page -->
 				<div class="item item-lucky-draw-demo">
-					<div class="navbar navbar-inverse navbar-fixed-top hidden" role="navigation">
-						<span class="navbar-brand">Lucky Draw Demo</span>
+					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+						<button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-left btn-sm btn-prev hide-this-later-1"><span class="glyphicon glyphicon-chevron-left"></span></button>
+            <span class="navbar-brand">Demo</span>
 					</div>
-					<div class="item-content" style="top:0;">
+					<div class="item-content swipe-target swipe-target-no-left">
             <img src="images/Picture5.png" alt="Lucky Draw Demo" style="width: 100%;" />
 						<div class="box-container-demo">
 							<img src="images/box.png" alt="" class="draw-items-demo" />
@@ -247,7 +248,7 @@
 						</div>
 					</div>
 				</div><!-- Terms Page -->
-				<div class="item">
+        <div class="item">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 						<span class="navbar-brand">Account</span>
 					</div>
@@ -307,8 +308,8 @@
 							<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
 						</div>
 						<div class="modal-body">
-							You have won a Consolation Prize!
-							<br/>
+							You have won a <span style="font-weight: bold;color:#f00;">Consolation Prize!</span>
+							<br/><br/>
 							<!--<img src="images/draw-result-0.jpg" style="width: 100%;"alt="Prize" />-->
               <img src="images/free-gift.gif" style="width: 100%;"alt="Prize" />
 						</div>
@@ -326,8 +327,8 @@
 							<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
 						</div>
 						<div class="modal-body">
-							You have won a Ice SunShine Watch!
-							<br/>
+							You have won a <span style="font-weight: bold;color:#f00;">Ice SunShine Watch!</span>
+							<br/><br/>
 							<img src="images/draw-result-1.png" style="width: 100%;"alt="Prize" />
 						</div>
 						<div class="modal-footer">
@@ -351,6 +352,7 @@
 	<script>
     var nothanks = true;
     var vid = true;
+    
 		$(function() {
 			$('button').not('.btn-sign-in').click(function (e) {
 				e.preventDefault();
@@ -363,40 +365,36 @@
 			var scroll = $('.item-content');
 			var fade = $('.carousel-indicators');
 			
-			//scroll.swipe( {
-			/*
-			$('.disabled-swipe-target').swipe( {
-				//Generic swipe handler for all directions
+      scroll = $('.swipe-target');
+      
+			scroll.swipe( {
+				//Generic swipe handler for all direfile:///D:/Github/android-webapp/Projects/app1/www/images/box.pngctions
 				swipeLeft:function(event, direction, distance, duration, fingerCount) {
-					fade.stop().fadeOut(250, function () {
-						if (scroll.scrollTop()) {
-							scroll.stop().animate({scrollTop:0}, 250, function() { 
-								$(target).parent().carousel('next');
-								setTimeout(function(){fade.stop().fadeIn(250)},600);
-							});
-						} else {
-							$(target).parent().carousel('next');
-							setTimeout(function(){fade.stop().fadeIn(250)},600);
-						}
-					});
+          if (!$(this).hasClass('swipe-target-no-left')) {
+            if (scroll.scrollTop()) {
+              scroll.stop().animate({scrollTop:0}, 250, function() { 
+                $('.carousel-inner').parent().carousel('next');
+              });
+            } else {
+              $('.carousel-inner').parent().carousel('next');
+            }
+          }
 				},
 				swipeRight: function() {
-					fade.stop().fadeOut(250, function () {
-						if (scroll.scrollTop()) {
-							scroll.stop().animate({scrollTop:0}, 250, function() { 
-								$(target).parent().carousel('prev');
-								setTimeout(function(){fade.stop().fadeIn(250)},600);
-							});
-						} else {
-							$(target).parent().carousel('prev');
-							setTimeout(function(){fade.stop().fadeIn(250)},600);
-						}
-					});
+          if (!$('.hide-this-later-1').hasClass('hide')) {
+            if (scroll.scrollTop()) {
+              scroll.stop().animate({scrollTop:0}, 250, function() { 
+                $('.carousel-inner').parent().carousel('prev');
+              });
+            } else {
+              $('.carousel-inner').parent().carousel('prev');
+            }
+          }
 				},
 				//Default is 75px, set to 0 for demo so any distance triggers swipe
 				threshold:75
 			});
-			*/
+			
 			
 			$('#carousel-page .checkbox input[name=tnc]').change(function () {
 				if (this.checked) {
@@ -427,17 +425,55 @@
 					scroll.stop().animate({scrollTop:0}, 250, function() { 
             if (_this.hasClass('btn-prev')) {
               $(target).parent().carousel('prev');
+            } else if (_this.hasClass('btn-tnc')) {
+              if (!vid) {
+                CDV.WEBINTENT.startApplication(
+                  {
+                    action: CDV.WEBINTENT.ACTION_MAIN,
+                    packageName: 'com.outplayentertainment.bubbleblaze'
+                  },
+                  function () {
+                    // success
+                    $('.carousel-inner').parent().carousel('next');
+                  },
+                  function () {}
+                );
+              } else {
+                cordova.plugins.videoPlayer.play("file:///android_asset/www/video/vid.mp4"); 
+              }
+              setTimeout(function () {
+                $(target).parent().carousel('next');
+              }, 5000);
             } else {
               $(target).parent().carousel('next');
             }
 					});
 				} else {
 					if (_this.hasClass('btn-prev')) {
-              $(target).parent().carousel('prev');
+            $(target).parent().carousel('prev');
+          } else if (_this.hasClass('btn-tnc')) {
+            if (!vid) {
+              CDV.WEBINTENT.startApplication(
+                {
+                  action: CDV.WEBINTENT.ACTION_MAIN,
+                  packageName: 'com.outplayentertainment.bubbleblaze'
+                },
+                function () {
+                  // success
+                  $('.carousel-inner').parent().carousel('next');
+                },
+                function () {}
+              );
             } else {
-              $(target).parent().carousel('next');
+              cordova.plugins.videoPlayer.play("file:///android_asset/www/video/vid.mp4"); 
             }
-				}
+            setTimeout(function () {
+              $(target).parent().carousel('next');
+            }, 5000);
+          } else {
+            $(target).parent().carousel('next');
+          }
+        }
 				e.preventDefault();
 				return false;
 			});
@@ -447,6 +483,7 @@
 				if (!drawingDemo) {
 					drawingDemo = !drawingDemo;
 					$('.btn-roll-draw-demo').addClass('hide');
+          $('.hide-this-later-1').addClass('hide');
 					
 					var r = Math.floor((Math.random()*9)+1);
 					var l = $('.box-container-demo .draw-items-demo').length;
@@ -579,6 +616,7 @@
 				for (var i = 0, il = u.length; i < il; i++) {
 					if (username == u[i].username) {
 						if (password == u[i].password) {
+              /*
               if (!vid) {
                 CDV.WEBINTENT.startApplication(
                   {
@@ -589,14 +627,13 @@
                     // success
                     $('.carousel-inner').parent().carousel('next');
                   },
-                  function () {/* fail */}
+                  function () {}
                 );
               } else {
                 cordova.plugins.videoPlayer.play("file:///android_asset/www/video/vid.mp4"); 
               }
-              setTimeout(function () {
-                $('.carousel-inner').parent().carousel('next');
-              }, 3000);
+              */
+              $('.carousel-inner').parent().carousel('next');
 						} else if ((i+1) === il) {
 							throw 'Wrong password.';
 						}
@@ -606,6 +643,7 @@
 				}
 			} catch (e) {
 				console.log(e);
+        alert(e);
 			}
 			return false;
 		}
@@ -636,9 +674,11 @@
 		}
 		function mediaCallSuccess() {
 			// Success
+      this.release();
 		}
 		function mediaCallError() {
 			// Error
+      this.release();
 		}
 	</script>
 	<div class="hidden">
