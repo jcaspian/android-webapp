@@ -105,12 +105,12 @@
 						<button type="button" data-target="#carousel-page" data-slide-to="3" class="btn btn-primary pull-right btn-sm"><span class="glyphicon glyphicon-chevron-right"></span><!-- Next --></button>
 					</div>
 					<div class="item-content swipe-target" style="padding: 0;background: #fff;">
-            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><span style="width:100%;overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 0px 0px 0px #fff inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/fuck-eric.jpg" alt="Prizes" style="border:0;width: 100%;" /></span>
+            <span style="display: inline-block;height: 100%;vertical-align:middle;width: 0;"></span><span style="width:100%;overflow:hidden;vertical-align:middle;display: inline-block;position: relative;"><span style="box-shadow: 0px 0px 0px 0px #fff inset;height: 100%;position: absolute;width: 100%;"></span><img src="images/ffz.jpg" alt="Prizes" style="border:0;width: 100%;" /></span>
 					</div>
 				</div><!-- Prizes Page -->
 				<div class="item item-lucky-draw-demo">
 					<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-						<button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-left btn-sm btn-prev"><span class="glyphicon glyphicon-chevron-left"></span></button>
+						<button type="button" data-target="#carousel-page" data-slide-to="0" class="btn btn-primary pull-left btn-sm btn-prev hide-this-later-1"><span class="glyphicon glyphicon-chevron-left"></span></button>
             <span class="navbar-brand">Demo</span>
 					</div>
 					<div class="item-content swipe-target swipe-target-no-left">
@@ -308,7 +308,7 @@
 							<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
 						</div>
 						<div class="modal-body">
-							You have won a Consolation Prize!
+							You have won a <span style="font-weight: bold;color:#f00;">Consolation Prize!</span>
 							<br/><br/>
 							<!--<img src="images/draw-result-0.jpg" style="width: 100%;"alt="Prize" />-->
               <img src="images/free-gift.gif" style="width: 100%;"alt="Prize" />
@@ -327,7 +327,7 @@
 							<h4 class="modal-title" id="myModalLabel">Congratulations!</h4>
 						</div>
 						<div class="modal-body">
-							You have won a Ice SunShine Watch!
+							You have won a <span style="font-weight: bold;color:#f00;">Ice SunShine Watch!</span>
 							<br/><br/>
 							<img src="images/draw-result-1.png" style="width: 100%;"alt="Prize" />
 						</div>
@@ -350,8 +350,8 @@
 	<script src="js/holder.js"></script>
 	<script src="js/jquery.touchSwipe.min.js"></script>
 	<script>
-    var nothanks = true;
-    var vid = true;
+    var nothanks = false;
+    var vid = false;
     
 		$(function() {
 			$('button').not('.btn-sign-in').click(function (e) {
@@ -368,7 +368,7 @@
       scroll = $('.swipe-target');
       
 			scroll.swipe( {
-				//Generic swipe handler for all directions
+				//Generic swipe handler for all direfile:///D:/Github/android-webapp/Projects/app1/www/images/box.pngctions
 				swipeLeft:function(event, direction, distance, duration, fingerCount) {
           if (!$(this).hasClass('swipe-target-no-left')) {
             if (scroll.scrollTop()) {
@@ -381,12 +381,14 @@
           }
 				},
 				swipeRight: function() {
-          if (scroll.scrollTop()) {
-            scroll.stop().animate({scrollTop:0}, 250, function() { 
+          if (!$('.hide-this-later-1').hasClass('hide')) {
+            if (scroll.scrollTop()) {
+              scroll.stop().animate({scrollTop:0}, 250, function() { 
+                $('.carousel-inner').parent().carousel('prev');
+              });
+            } else {
               $('.carousel-inner').parent().carousel('prev');
-            });
-          } else {
-            $('.carousel-inner').parent().carousel('prev');
+            }
           }
 				},
 				//Default is 75px, set to 0 for demo so any distance triggers swipe
@@ -481,6 +483,7 @@
 				if (!drawingDemo) {
 					drawingDemo = !drawingDemo;
 					$('.btn-roll-draw-demo').addClass('hide');
+          $('.hide-this-later-1').addClass('hide');
 					
 					var r = Math.floor((Math.random()*9)+1);
 					var l = $('.box-container-demo .draw-items-demo').length;
